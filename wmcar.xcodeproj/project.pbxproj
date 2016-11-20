@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		180EB4D51DE2132100DCD7AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB4D41DE2132100DCD7AA /* main.m */; };
+		180EB4D81DE2132100DCD7AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB4D71DE2132100DCD7AA /* AppDelegate.m */; };
+		180EB4DB1DE2132100DCD7AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB4DA1DE2132100DCD7AA /* ViewController.m */; };
+		180EB4DE1DE2132100DCD7AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180EB4DC1DE2132100DCD7AA /* Main.storyboard */; };
+		180EB4E01DE2132100DCD7AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180EB4DF1DE2132100DCD7AA /* Assets.xcassets */; };
+		180EB4E31DE2132100DCD7AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180EB4E11DE2132100DCD7AA /* LaunchScreen.storyboard */; };
+		180EB4EE1DE2132100DCD7AA /* wmcarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB4ED1DE2132100DCD7AA /* wmcarTests.m */; };
+		180EB4F91DE2132100DCD7AA /* wmcarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB4F81DE2132100DCD7AA /* wmcarUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		180EB4EA1DE2132100DCD7AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180EB4C81DE2132100DCD7AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 180EB4CF1DE2132100DCD7AA;
+			remoteInfo = wmcar;
+		};
+		180EB4F51DE2132100DCD7AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180EB4C81DE2132100DCD7AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 180EB4CF1DE2132100DCD7AA;
+			remoteInfo = wmcar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		180EB4D01DE2132100DCD7AA /* wmcar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wmcar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		180EB4D41DE2132100DCD7AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		180EB4D61DE2132100DCD7AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		180EB4D71DE2132100DCD7AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		180EB4D91DE2132100DCD7AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		180EB4DA1DE2132100DCD7AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		180EB4DD1DE2132100DCD7AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		180EB4DF1DE2132100DCD7AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		180EB4E21DE2132100DCD7AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		180EB4E41DE2132100DCD7AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		180EB4E91DE2132100DCD7AA /* wmcarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wmcarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		180EB4ED1DE2132100DCD7AA /* wmcarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wmcarTests.m; sourceTree = "<group>"; };
+		180EB4EF1DE2132100DCD7AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		180EB4F41DE2132100DCD7AA /* wmcarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wmcarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		180EB4F81DE2132100DCD7AA /* wmcarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wmcarUITests.m; sourceTree = "<group>"; };
+		180EB4FA1DE2132100DCD7AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		180EB4CD1DE2132100DCD7AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180EB4E61DE2132100DCD7AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180EB4F11DE2132100DCD7AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		180EB4C71DE2132100DCD7AA = {
+			isa = PBXGroup;
+			children = (
+				180EB4D21DE2132100DCD7AA /* wmcar */,
+				180EB4EC1DE2132100DCD7AA /* wmcarTests */,
+				180EB4F71DE2132100DCD7AA /* wmcarUITests */,
+				180EB4D11DE2132100DCD7AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		180EB4D11DE2132100DCD7AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				180EB4D01DE2132100DCD7AA /* wmcar.app */,
+				180EB4E91DE2132100DCD7AA /* wmcarTests.xctest */,
+				180EB4F41DE2132100DCD7AA /* wmcarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		180EB4D21DE2132100DCD7AA /* wmcar */ = {
+			isa = PBXGroup;
+			children = (
+				180EB4D61DE2132100DCD7AA /* AppDelegate.h */,
+				180EB4D71DE2132100DCD7AA /* AppDelegate.m */,
+				180EB4D91DE2132100DCD7AA /* ViewController.h */,
+				180EB4DA1DE2132100DCD7AA /* ViewController.m */,
+				180EB4DC1DE2132100DCD7AA /* Main.storyboard */,
+				180EB4DF1DE2132100DCD7AA /* Assets.xcassets */,
+				180EB4E11DE2132100DCD7AA /* LaunchScreen.storyboard */,
+				180EB4E41DE2132100DCD7AA /* Info.plist */,
+				180EB4D31DE2132100DCD7AA /* Supporting Files */,
+			);
+			path = wmcar;
+			sourceTree = "<group>";
+		};
+		180EB4D31DE2132100DCD7AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				180EB4D41DE2132100DCD7AA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		180EB4EC1DE2132100DCD7AA /* wmcarTests */ = {
+			isa = PBXGroup;
+			children = (
+				180EB4ED1DE2132100DCD7AA /* wmcarTests.m */,
+				180EB4EF1DE2132100DCD7AA /* Info.plist */,
+			);
+			path = wmcarTests;
+			sourceTree = "<group>";
+		};
+		180EB4F71DE2132100DCD7AA /* wmcarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				180EB4F81DE2132100DCD7AA /* wmcarUITests.m */,
+				180EB4FA1DE2132100DCD7AA /* Info.plist */,
+			);
+			path = wmcarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		180EB4CF1DE2132100DCD7AA /* wmcar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 180EB4FD1DE2132100DCD7AA /* Build configuration list for PBXNativeTarget "wmcar" */;
+			buildPhases = (
+				180EB4CC1DE2132100DCD7AA /* Sources */,
+				180EB4CD1DE2132100DCD7AA /* Frameworks */,
+				180EB4CE1DE2132100DCD7AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wmcar;
+			productName = wmcar;
+			productReference = 180EB4D01DE2132100DCD7AA /* wmcar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		180EB4E81DE2132100DCD7AA /* wmcarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 180EB5001DE2132100DCD7AA /* Build configuration list for PBXNativeTarget "wmcarTests" */;
+			buildPhases = (
+				180EB4E51DE2132100DCD7AA /* Sources */,
+				180EB4E61DE2132100DCD7AA /* Frameworks */,
+				180EB4E71DE2132100DCD7AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				180EB4EB1DE2132100DCD7AA /* PBXTargetDependency */,
+			);
+			name = wmcarTests;
+			productName = wmcarTests;
+			productReference = 180EB4E91DE2132100DCD7AA /* wmcarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		180EB4F31DE2132100DCD7AA /* wmcarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 180EB5031DE2132100DCD7AA /* Build configuration list for PBXNativeTarget "wmcarUITests" */;
+			buildPhases = (
+				180EB4F01DE2132100DCD7AA /* Sources */,
+				180EB4F11DE2132100DCD7AA /* Frameworks */,
+				180EB4F21DE2132100DCD7AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				180EB4F61DE2132100DCD7AA /* PBXTargetDependency */,
+			);
+			name = wmcarUITests;
+			productName = wmcarUITests;
+			productReference = 180EB4F41DE2132100DCD7AA /* wmcarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		180EB4C81DE2132100DCD7AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Ada;
+				TargetAttributes = {
+					180EB4CF1DE2132100DCD7AA = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					180EB4E81DE2132100DCD7AA = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 180EB4CF1DE2132100DCD7AA;
+					};
+					180EB4F31DE2132100DCD7AA = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 180EB4CF1DE2132100DCD7AA;
+					};
+				};
+			};
+			buildConfigurationList = 180EB4CB1DE2132100DCD7AA /* Build configuration list for PBXProject "wmcar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 180EB4C71DE2132100DCD7AA;
+			productRefGroup = 180EB4D11DE2132100DCD7AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				180EB4CF1DE2132100DCD7AA /* wmcar */,
+				180EB4E81DE2132100DCD7AA /* wmcarTests */,
+				180EB4F31DE2132100DCD7AA /* wmcarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		180EB4CE1DE2132100DCD7AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180EB4E31DE2132100DCD7AA /* LaunchScreen.storyboard in Resources */,
+				180EB4E01DE2132100DCD7AA /* Assets.xcassets in Resources */,
+				180EB4DE1DE2132100DCD7AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180EB4E71DE2132100DCD7AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180EB4F21DE2132100DCD7AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		180EB4CC1DE2132100DCD7AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180EB4DB1DE2132100DCD7AA /* ViewController.m in Sources */,
+				180EB4D81DE2132100DCD7AA /* AppDelegate.m in Sources */,
+				180EB4D51DE2132100DCD7AA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180EB4E51DE2132100DCD7AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180EB4EE1DE2132100DCD7AA /* wmcarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180EB4F01DE2132100DCD7AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180EB4F91DE2132100DCD7AA /* wmcarUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		180EB4EB1DE2132100DCD7AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 180EB4CF1DE2132100DCD7AA /* wmcar */;
+			targetProxy = 180EB4EA1DE2132100DCD7AA /* PBXContainerItemProxy */;
+		};
+		180EB4F61DE2132100DCD7AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 180EB4CF1DE2132100DCD7AA /* wmcar */;
+			targetProxy = 180EB4F51DE2132100DCD7AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		180EB4DC1DE2132100DCD7AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				180EB4DD1DE2132100DCD7AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		180EB4E11DE2132100DCD7AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				180EB4E21DE2132100DCD7AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		180EB4FB1DE2132100DCD7AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		180EB4FC1DE2132100DCD7AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		180EB4FE1DE2132100DCD7AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = wmcar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.wmcar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		180EB4FF1DE2132100DCD7AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = wmcar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.wmcar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		180EB5011DE2132100DCD7AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wmcarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.wmcarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wmcar.app/wmcar";
+			};
+			name = Debug;
+		};
+		180EB5021DE2132100DCD7AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wmcarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.wmcarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wmcar.app/wmcar";
+			};
+			name = Release;
+		};
+		180EB5041DE2132100DCD7AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = wmcarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.wmcarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wmcar;
+			};
+			name = Debug;
+		};
+		180EB5051DE2132100DCD7AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = wmcarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.wmcarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wmcar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		180EB4CB1DE2132100DCD7AA /* Build configuration list for PBXProject "wmcar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180EB4FB1DE2132100DCD7AA /* Debug */,
+				180EB4FC1DE2132100DCD7AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		180EB4FD1DE2132100DCD7AA /* Build configuration list for PBXNativeTarget "wmcar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180EB4FE1DE2132100DCD7AA /* Debug */,
+				180EB4FF1DE2132100DCD7AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		180EB5001DE2132100DCD7AA /* Build configuration list for PBXNativeTarget "wmcarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180EB5011DE2132100DCD7AA /* Debug */,
+				180EB5021DE2132100DCD7AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		180EB5031DE2132100DCD7AA /* Build configuration list for PBXNativeTarget "wmcarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180EB5041DE2132100DCD7AA /* Debug */,
+				180EB5051DE2132100DCD7AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 180EB4C81DE2132100DCD7AA /* Project object */;
+}
