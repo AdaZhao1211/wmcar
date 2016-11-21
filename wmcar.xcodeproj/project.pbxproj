@@ -16,8 +16,8 @@
 		180EB4EE1DE2132100DCD7AA /* wmcarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB4ED1DE2132100DCD7AA /* wmcarTests.m */; };
 		180EB4F91DE2132100DCD7AA /* wmcarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB4F81DE2132100DCD7AA /* wmcarUITests.m */; };
 		180EB5091DE216F100DCD7AA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB5081DE216F100DCD7AA /* SWRevealViewController.m */; };
-		180EB50F1DE22E5200DCD7AA /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB50E1DE22E5200DCD7AA /* SettingViewController.m */; };
 		180EB5121DE22F1900DCD7AA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB5111DE22F1900DCD7AA /* MapViewController.m */; };
+		180EB5181DE36B9500DCD7AA /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB5171DE36B9500DCD7AA /* SettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +56,10 @@
 		180EB4FA1DE2132100DCD7AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180EB5071DE216F100DCD7AA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
 		180EB5081DE216F100DCD7AA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = SOURCE_ROOT; };
-		180EB50D1DE22E5200DCD7AA /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = ../SettingViewController.h; sourceTree = "<group>"; };
-		180EB50E1DE22E5200DCD7AA /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ../SettingViewController.m; sourceTree = "<group>"; };
 		180EB5101DE22F1900DCD7AA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		180EB5111DE22F1900DCD7AA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		180EB5161DE36B9500DCD7AA /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		180EB5171DE36B9500DCD7AA /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,11 +115,11 @@
 				180EB4D71DE2132100DCD7AA /* AppDelegate.m */,
 				180EB4D91DE2132100DCD7AA /* ViewController.h */,
 				180EB4DA1DE2132100DCD7AA /* ViewController.m */,
-				180EB50D1DE22E5200DCD7AA /* SettingViewController.h */,
-				180EB50E1DE22E5200DCD7AA /* SettingViewController.m */,
 				180EB4DC1DE2132100DCD7AA /* Main.storyboard */,
 				180EB5101DE22F1900DCD7AA /* MapViewController.h */,
 				180EB5111DE22F1900DCD7AA /* MapViewController.m */,
+				180EB5161DE36B9500DCD7AA /* SettingViewController.h */,
+				180EB5171DE36B9500DCD7AA /* SettingViewController.m */,
 				180EB4DF1DE2132100DCD7AA /* Assets.xcassets */,
 				180EB4E11DE2132100DCD7AA /* LaunchScreen.storyboard */,
 				180EB4E41DE2132100DCD7AA /* Info.plist */,
@@ -301,7 +301,7 @@
 				180EB4D51DE2132100DCD7AA /* main.m in Sources */,
 				180EB5121DE22F1900DCD7AA /* MapViewController.m in Sources */,
 				180EB5091DE216F100DCD7AA /* SWRevealViewController.m in Sources */,
-				180EB50F1DE22E5200DCD7AA /* SettingViewController.m in Sources */,
+				180EB5181DE36B9500DCD7AA /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

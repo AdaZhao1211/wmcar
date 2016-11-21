@@ -14,65 +14,44 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="ywb-R5-Zwm" kind="custom" id="Xhc-U7-bfk"/>
                         <segue destination="ua8-91-MCA" kind="custom" id="PBd-NU-LRy"/>
+                        <segue destination="hEB-zU-FUO" kind="custom" id="lbw-uD-Zhu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
         <!--Setting View Controller-->
-        <scene sceneID="KeA-5S-VcX">
+        <scene sceneID="mGb-yG-3Cb">
             <objects>
-                <tableViewController id="ywb-R5-Zwm" customClass="SettingViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="khD-gD-pYr">
+                <viewController id="hEB-zU-FUO" customClass="SettingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c2K-hk-HfO"/>
+                        <viewControllerLayoutGuide type="bottom" id="AA4-GI-Cxe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OvO-od-lsA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Too-2H-kXS">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Too-2H-kXS" id="Iof-8x-blt">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ywb-R5-Zwm" id="FsH-MW-mMV"/>
-                            <outlet property="delegate" destination="ywb-R5-Zwm" id="ttV-bF-Z7l"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="naD-aO-05H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTb-DY-Tpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="-544"/>
+            <point key="canvasLocation" x="863" y="-534"/>
         </scene>
-        <!--Map View Controller-->
+        <!--WMCar-->
         <scene sceneID="vbc-E1-QBk">
             <objects>
                 <viewController id="CRY-gE-f6f" customClass="MapViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="N0J-lP-sIs"/>
-                        <viewControllerLayoutGuide type="bottom" id="5Qc-VT-vZg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ei7-PO-XTb">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="ThX-Y7-ig7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LD1-Kv-mXI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="kmP-PX-UlB"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
+                    <navigationItem key="navigationItem" title="WMCar" id="jx5-JN-cVP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hju-Pg-Sal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092" y="296.40179910044981"/>
+            <point key="canvasLocation" x="1970.4000000000001" y="297.30134932533736"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TjS-bS-Ocp">

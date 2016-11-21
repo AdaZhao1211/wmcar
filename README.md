@@ -1,0 +1,11 @@
+#WMCar
+Where is My Car is a simple, easy to use app to remind you how to get back to your car! All you have to do is pin your parked location and later it will guide you to your car. If you need a reminder of the parking garage’s floor, it will pop up once you are close to your car. You can also take a picture of where you parked your car. To make it more convenient for you, Siri will also help you locate your car. Just say “Siri where is my car?”.
+
+You can also enjoy the WMCar on your Apple Watch. You can pinpoint your location, navigate through your parking area and locate your car with just a few taps.
+
+#Resources
+[Add image to a navigationItem's title] (http://stackoverflow.com/questions/328352/add-image-to-a-navigationitems-title)
+
+[Customize Table Cell] (http://www.appcoda.com/customize-table-view-cells-for-uitableview/)
+
+[Side Drawer] (https://www.codementor.io/ios/tutorial/mmdrawercontroller-ios-implementation-side-menu-navigation)
