@@ -17,7 +17,8 @@
 		180EB4F91DE2132100DCD7AA /* wmcarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB4F81DE2132100DCD7AA /* wmcarUITests.m */; };
 		180EB5091DE216F100DCD7AA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB5081DE216F100DCD7AA /* SWRevealViewController.m */; };
 		180EB5121DE22F1900DCD7AA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB5111DE22F1900DCD7AA /* MapViewController.m */; };
-		180EB5181DE36B9500DCD7AA /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB5171DE36B9500DCD7AA /* SettingViewController.m */; };
+		180EB51B1DE387E400DCD7AA /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB51A1DE387E400DCD7AA /* SettingTableViewController.m */; };
+		180EB51D1DE38CD300DCD7AA /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 180EB51C1DE38CD300DCD7AA /* settings.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +59,9 @@
 		180EB5081DE216F100DCD7AA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = SOURCE_ROOT; };
 		180EB5101DE22F1900DCD7AA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		180EB5111DE22F1900DCD7AA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		180EB5161DE36B9500DCD7AA /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		180EB5171DE36B9500DCD7AA /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		180EB5191DE387E400DCD7AA /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
+		180EB51A1DE387E400DCD7AA /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
+		180EB51C1DE38CD300DCD7AA /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		180EB4C71DE2132100DCD7AA = {
 			isa = PBXGroup;
 			children = (
+				180EB5061DE2155E00DCD7AA /* SWRevealViewController */,
 				180EB4D21DE2132100DCD7AA /* wmcar */,
 				180EB4EC1DE2132100DCD7AA /* wmcarTests */,
 				180EB4F71DE2132100DCD7AA /* wmcarUITests */,
@@ -110,16 +113,15 @@
 		180EB4D21DE2132100DCD7AA /* wmcar */ = {
 			isa = PBXGroup;
 			children = (
-				180EB5061DE2155E00DCD7AA /* SWRevealViewController */,
 				180EB4D61DE2132100DCD7AA /* AppDelegate.h */,
 				180EB4D71DE2132100DCD7AA /* AppDelegate.m */,
 				180EB4D91DE2132100DCD7AA /* ViewController.h */,
 				180EB4DA1DE2132100DCD7AA /* ViewController.m */,
 				180EB4DC1DE2132100DCD7AA /* Main.storyboard */,
+				180EB5191DE387E400DCD7AA /* SettingTableViewController.h */,
+				180EB51A1DE387E400DCD7AA /* SettingTableViewController.m */,
 				180EB5101DE22F1900DCD7AA /* MapViewController.h */,
 				180EB5111DE22F1900DCD7AA /* MapViewController.m */,
-				180EB5161DE36B9500DCD7AA /* SettingViewController.h */,
-				180EB5171DE36B9500DCD7AA /* SettingViewController.m */,
 				180EB4DF1DE2132100DCD7AA /* Assets.xcassets */,
 				180EB4E11DE2132100DCD7AA /* LaunchScreen.storyboard */,
 				180EB4E41DE2132100DCD7AA /* Info.plist */,
@@ -131,6 +133,7 @@
 		180EB4D31DE2132100DCD7AA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				180EB51C1DE38CD300DCD7AA /* settings.png */,
 				180EB4D41DE2132100DCD7AA /* main.m */,
 			);
 			name = "Supporting Files";
@@ -161,6 +164,7 @@
 				180EB5081DE216F100DCD7AA /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
+			path = wmcar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180EB51D1DE38CD300DCD7AA /* settings.png in Resources */,
 				180EB4E31DE2132100DCD7AA /* LaunchScreen.storyboard in Resources */,
 				180EB4E01DE2132100DCD7AA /* Assets.xcassets in Resources */,
 				180EB4DE1DE2132100DCD7AA /* Main.storyboard in Resources */,
@@ -300,8 +305,8 @@
 				180EB4D81DE2132100DCD7AA /* AppDelegate.m in Sources */,
 				180EB4D51DE2132100DCD7AA /* main.m in Sources */,
 				180EB5121DE22F1900DCD7AA /* MapViewController.m in Sources */,
+				180EB51B1DE387E400DCD7AA /* SettingTableViewController.m in Sources */,
 				180EB5091DE216F100DCD7AA /* SWRevealViewController.m in Sources */,
-				180EB5181DE36B9500DCD7AA /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  SettingViewController.h
+//  SettingTableViewController.h
 //  wmcar
 //
 //  Created by Ada on 11/21/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingViewController : UIViewController
+@interface SettingTableViewController : UITableViewController
 
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MapViewController : UIViewController
+@property (nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 
 @end
