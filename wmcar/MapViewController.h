@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
+#import "SWRevealViewController.h"
 @interface MapViewController : UIViewController
 @property (nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 

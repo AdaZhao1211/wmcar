@@ -18,18 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customSetup];
+    NSLog(@"mappp");
     // Do any additional setup after loading the view.
 }
 
 - (void)customSetup
 {
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.revealButtonItem setTarget: self.revealViewController];
-        [self.revealButtonItem setAction: @selector( revealToggle: )];
-        [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
-    }
+    _revealButtonItem.target = self.revealViewController;
+    _revealButtonItem.action = @selector(revealToggle:);
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 #pragma mark state preservation / restoration

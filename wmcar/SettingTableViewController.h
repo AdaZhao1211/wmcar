@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@interface SWUITableViewCell : UITableViewCell
+@property (nonatomic) IBOutlet UILabel *ll;
+@end
+
 @interface SettingTableViewController : UITableViewController
 
 @end
