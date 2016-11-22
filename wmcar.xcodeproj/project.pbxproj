@@ -18,6 +18,7 @@
 		180EB5121DE22F1900DCD7AA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB5111DE22F1900DCD7AA /* MapViewController.m */; };
 		180EB51B1DE387E400DCD7AA /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB51A1DE387E400DCD7AA /* SettingTableViewController.m */; };
 		180EB51D1DE38CD300DCD7AA /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 180EB51C1DE38CD300DCD7AA /* settings.png */; };
+		180EB5241DE4FA8A00DCD7AA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180EB5231DE4FA8A00DCD7AA /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		180EB5191DE387E400DCD7AA /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		180EB51A1DE387E400DCD7AA /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
 		180EB51C1DE38CD300DCD7AA /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		180EB5231DE4FA8A00DCD7AA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180EB5241DE4FA8A00DCD7AA /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +97,7 @@
 				180EB4EC1DE2132100DCD7AA /* wmcarTests */,
 				180EB4F71DE2132100DCD7AA /* wmcarUITests */,
 				180EB4D11DE2132100DCD7AA /* Products */,
+				180EB5221DE4FA8A00DCD7AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +172,14 @@
 			children = (
 			);
 			name = Assests;
+			sourceTree = "<group>";
+		};
+		180EB5221DE4FA8A00DCD7AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				180EB5231DE4FA8A00DCD7AA /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
