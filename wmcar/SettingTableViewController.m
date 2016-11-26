@@ -30,8 +30,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -72,6 +70,21 @@
     }
 }
 
+- (IBAction)cityy:(id)sender {
+    if([sender isOn]){
+        
+    }else{
+        
+    }
+}
+
+- (IBAction)multii:(id)sender {
+    if([sender isOn]){
+        
+    }else{
+        
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -123,4 +136,6 @@
 }
 
 
+- (IBAction)multi:(id)sender {
+}
 @end

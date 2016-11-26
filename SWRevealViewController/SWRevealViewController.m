@@ -355,6 +355,7 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
     return result * symetry;
 }
 
+
 @end
 
 
@@ -1879,6 +1880,7 @@ NSString * const SWSegueRightIdentifier = @"sw_right";
     [rvc pushFrontViewController:dvc animated:YES];
 }
 
+
 @end
 
 
@@ -1898,7 +1900,8 @@ NSString * const SWSegueRightIdentifier = @"sw_right";
 //#pragma mark Storyboard support
 //
 //@implementation SWRevealViewController(deprecated)
-//
+
+
 //- (void)prepareForSegue:(SWRevealViewControllerSegue *)segue sender:(id)sender   // TO REMOVE: DEPRECATED IMPLEMENTATION
 //{
 //    // This method is required for compatibility with SWRevealViewControllerSegue, now deprecated.
