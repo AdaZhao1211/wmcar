@@ -15,6 +15,5 @@
 @interface MapViewController : UIViewController 
 @property (nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIButton *set;
-@property (weak, nonatomic) IBOutlet MKMapView *myMap;
 @property (nonatomic, assign) Boolean city;
 @end

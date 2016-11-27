@@ -8,7 +8,7 @@
 
 #import "MapViewController.h"
 
-@interface MapViewController () <MKMapViewDelegate> {
+@interface MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate> {
     CLLocationManager *locationmanager;
     __weak IBOutlet MKMapView *myMapView;
 }
@@ -26,6 +26,7 @@
     }
     [myMapView setShowsUserLocation: YES];
     myMapView.delegate = self;
+    locationmanager.delegate = self;
     [locationmanager startUpdatingLocation];
     NSLog(@"%d %@", myMapView.showsUserLocation, myMapView.userLocation);
 }
@@ -44,11 +45,11 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-//    MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];
-//    [mapView setCamera:camera animated:YES];
-//    NSLog(@"set camera");
-    [mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
-    NSLog(@"ssss");
+    MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];
+    [mapView setCamera:camera animated:YES];
+    NSLog(@"set camera");
+//    [mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+//    NSLog(@"ssss");
 }
 
 @end

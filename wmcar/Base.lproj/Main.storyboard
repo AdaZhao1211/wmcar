@@ -143,7 +143,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="myMap" destination="DxT-ZF-SIU" id="NjQ-ah-Zwv"/>
+                        <outlet property="myMapView" destination="DxT-ZF-SIU" id="rtN-0D-5Bp"/>
                         <outlet property="revealButtonItem" destination="Ynv-ZE-LU4" id="toD-Sm-MK5"/>
                         <outlet property="set" destination="Noz-oV-J7m" id="mZF-U4-GQc"/>
                         <segue destination="Ifw-c5-NGI" kind="presentation" identifier="showNote" id="xHn-RS-cYW"/>
