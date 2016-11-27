@@ -21,6 +21,7 @@
 		180EB5241DE4FA8A00DCD7AA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180EB5231DE4FA8A00DCD7AA /* MapKit.framework */; };
 		180EB52A1DE9DA7600DCD7AA /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 180EB5291DE9DA7600DCD7AA /* camera.png */; };
 		180EB52D1DE9DD8F00DCD7AA /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB52C1DE9DD8F00DCD7AA /* NoteViewController.m */; };
+		180EB52F1DEA48E000DCD7AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180EB52E1DEA48E000DCD7AA /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		180EB5291DE9DA7600DCD7AA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		180EB52B1DE9DD8F00DCD7AA /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
 		180EB52C1DE9DD8F00DCD7AA /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		180EB52E1DEA48E000DCD7AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180EB52F1DEA48E000DCD7AA /* CoreLocation.framework in Frameworks */,
 				180EB5241DE4FA8A00DCD7AA /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +188,7 @@
 		180EB5221DE4FA8A00DCD7AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				180EB52E1DEA48E000DCD7AA /* CoreLocation.framework */,
 				180EB5231DE4FA8A00DCD7AA /* MapKit.framework */,
 			);
 			name = Frameworks;

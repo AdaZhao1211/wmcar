@@ -7,9 +7,10 @@
 //
 
 #import "MapViewController.h"
-#import "SWRevealViewController.h"
 
-@interface MapViewController ()
+@interface MapViewController () <MKMapViewDelegate> {
+    CLLocationManager *locationmanager;
+}
 @end
 
 @implementation MapViewController
@@ -18,6 +19,10 @@
     [super viewDidLoad];
     [self customSetup];
     _city = NO;
+    locationmanager = [CLLocationManager new];
+    if([locationmanager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
+        [locationmanager requestWhenInUseAuthorization];
+    }
     // Do any additional setup after loading the view.
 }
 

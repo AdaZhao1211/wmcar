@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "SWRevealViewController.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController 
 @property (nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIButton *set;
+@property (weak, nonatomic) IBOutlet MKMapView *myMap;
 @property (nonatomic, assign) Boolean city;
 @end
