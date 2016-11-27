@@ -10,6 +10,7 @@
 
 @interface MapViewController () <MKMapViewDelegate> {
     CLLocationManager *locationmanager;
+    __weak IBOutlet MKMapView *myMapView;
 }
 @end
 
@@ -23,7 +24,10 @@
     if([locationmanager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
         [locationmanager requestWhenInUseAuthorization];
     }
-    // Do any additional setup after loading the view.
+    [myMapView setShowsUserLocation: YES];
+    myMapView.delegate = self;
+    [locationmanager startUpdatingLocation];
+    NSLog(@"%d %@", myMapView.showsUserLocation, myMapView.userLocation);
 }
 
 - (void)customSetup
@@ -33,5 +37,18 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
+- (IBAction)setPinpoint:(id)sender {
+    if(_city){
+        [self performSegueWithIdentifier:@"showNote" sender:nil];
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+//    MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];
+//    [mapView setCamera:camera animated:YES];
+//    NSLog(@"set camera");
+    [mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+    NSLog(@"ssss");
+}
 
 @end

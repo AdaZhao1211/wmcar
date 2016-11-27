@@ -8,4 +8,4 @@ You can also enjoy the WMCar on your Apple Watch. You can pinpoint your location
 
 [Customize Table Cell] (http://www.appcoda.com/customize-table-view-cells-for-uitableview/)
 
-[Side Drawer] (https://www.codementor.io/ios/tutorial/mmdrawercontroller-ios-implementation-side-menu-navigation)
+[CSCI-UA.0480-002 iOS Programming] (http://cs.nyu.edu/courses/fall16/CSCI-UA.0480-002/)

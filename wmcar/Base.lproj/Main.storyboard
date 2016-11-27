@@ -130,6 +130,9 @@
                                 <state key="normal" title="Set Pinpoint">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="setPinpoint:" destination="CRY-gE-f6f" eventType="touchUpInside" id="oSy-yw-fdL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -140,9 +143,10 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="myMap" destination="DxT-ZF-SIU" id="a4A-kv-n5k"/>
+                        <outlet property="myMap" destination="DxT-ZF-SIU" id="NjQ-ah-Zwv"/>
                         <outlet property="revealButtonItem" destination="Ynv-ZE-LU4" id="toD-Sm-MK5"/>
                         <outlet property="set" destination="Noz-oV-J7m" id="mZF-U4-GQc"/>
+                        <segue destination="Ifw-c5-NGI" kind="presentation" identifier="showNote" id="xHn-RS-cYW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hju-Pg-Sal" userLabel="First Responder" sceneMemberID="firstResponder"/>
