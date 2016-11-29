@@ -22,6 +22,7 @@
 		180EB52A1DE9DA7600DCD7AA /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 180EB5291DE9DA7600DCD7AA /* camera.png */; };
 		180EB52D1DE9DD8F00DCD7AA /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB52C1DE9DD8F00DCD7AA /* NoteViewController.m */; };
 		180EB52F1DEA48E000DCD7AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180EB52E1DEA48E000DCD7AA /* CoreLocation.framework */; };
+		1815C3061DECC99800CEF780 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 1815C3051DECC99800CEF780 /* Model.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		180EB52B1DE9DD8F00DCD7AA /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
 		180EB52C1DE9DD8F00DCD7AA /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		180EB52E1DEA48E000DCD7AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1815C3041DECC99800CEF780 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		1815C3051DECC99800CEF780 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,17 +125,14 @@
 		180EB4D21DE2132100DCD7AA /* wmcar */ = {
 			isa = PBXGroup;
 			children = (
+				1815C3071DECC9A500CEF780 /* Views */,
 				180EB5211DE4D0D600DCD7AA /* Assests */,
 				180EB4D61DE2132100DCD7AA /* AppDelegate.h */,
 				180EB4D71DE2132100DCD7AA /* AppDelegate.m */,
 				180EB4E11DE2132100DCD7AA /* LaunchScreen.storyboard */,
 				180EB4DC1DE2132100DCD7AA /* Main.storyboard */,
-				180EB52B1DE9DD8F00DCD7AA /* NoteViewController.h */,
-				180EB52C1DE9DD8F00DCD7AA /* NoteViewController.m */,
-				180EB5191DE387E400DCD7AA /* SettingTableViewController.h */,
-				180EB51A1DE387E400DCD7AA /* SettingTableViewController.m */,
-				180EB5101DE22F1900DCD7AA /* MapViewController.h */,
-				180EB5111DE22F1900DCD7AA /* MapViewController.m */,
+				1815C3041DECC99800CEF780 /* Model.h */,
+				1815C3051DECC99800CEF780 /* Model.m */,
 				180EB4DF1DE2132100DCD7AA /* Assets.xcassets */,
 				180EB4E41DE2132100DCD7AA /* Info.plist */,
 				180EB4D31DE2132100DCD7AA /* Supporting Files */,
@@ -143,8 +143,6 @@
 		180EB4D31DE2132100DCD7AA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				180EB5291DE9DA7600DCD7AA /* camera.png */,
-				180EB51C1DE38CD300DCD7AA /* settings.png */,
 				180EB4D41DE2132100DCD7AA /* main.m */,
 			);
 			name = "Supporting Files";
@@ -181,6 +179,8 @@
 		180EB5211DE4D0D600DCD7AA /* Assests */ = {
 			isa = PBXGroup;
 			children = (
+				180EB5291DE9DA7600DCD7AA /* camera.png */,
+				180EB51C1DE38CD300DCD7AA /* settings.png */,
 			);
 			name = Assests;
 			sourceTree = "<group>";
@@ -192,6 +192,19 @@
 				180EB5231DE4FA8A00DCD7AA /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1815C3071DECC9A500CEF780 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				180EB52B1DE9DD8F00DCD7AA /* NoteViewController.h */,
+				180EB52C1DE9DD8F00DCD7AA /* NoteViewController.m */,
+				180EB5191DE387E400DCD7AA /* SettingTableViewController.h */,
+				180EB51A1DE387E400DCD7AA /* SettingTableViewController.m */,
+				180EB5101DE22F1900DCD7AA /* MapViewController.h */,
+				180EB5111DE22F1900DCD7AA /* MapViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +346,7 @@
 				180EB4D51DE2132100DCD7AA /* main.m in Sources */,
 				180EB5121DE22F1900DCD7AA /* MapViewController.m in Sources */,
 				180EB51B1DE387E400DCD7AA /* SettingTableViewController.m in Sources */,
+				1815C3061DECC99800CEF780 /* Model.m in Sources */,
 				180EB52D1DE9DD8F00DCD7AA /* NoteViewController.m in Sources */,
 				180EB5091DE216F100DCD7AA /* SWRevealViewController.m in Sources */,
 			);
@@ -564,6 +578,7 @@
 				180EB4FF1DE2132100DCD7AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		180EB5001DE2132100DCD7AA /* Build configuration list for PBXNativeTarget "wmcarTests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +587,7 @@
 				180EB5021DE2132100DCD7AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		180EB5031DE2132100DCD7AA /* Build configuration list for PBXNativeTarget "wmcarUITests" */ = {
 			isa = XCConfigurationList;
@@ -580,6 +596,7 @@
 				180EB5051DE2132100DCD7AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

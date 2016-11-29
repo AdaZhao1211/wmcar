@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
 
 @interface NoteViewController : UIViewController
+
+@property (strong, nonatomic) Model *model;
+@property (weak, nonatomic) IBOutlet UITextField *floorField;
+@property (weak, nonatomic) IBOutlet UITextField *numField;
 
 @end

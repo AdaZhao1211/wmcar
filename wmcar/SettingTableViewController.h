@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
 
 @interface SettingTableViewController : UITableViewController
-
+@property (weak, nonatomic) Model *settingModel;
 @end

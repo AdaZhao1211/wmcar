@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customSetup];
-    _city = NO;
+    _city = YES;
     locationmanager = [CLLocationManager new];
     if([locationmanager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
         [locationmanager requestWhenInUseAuthorization];
@@ -28,7 +28,8 @@
     myMapView.delegate = self;
     locationmanager.delegate = self;
     [locationmanager startUpdatingLocation];
-    NSLog(@"%d %@", myMapView.showsUserLocation, myMapView.userLocation);
+    self.noteModel = [Model new];
+    self.settingModel = [Model new];
 }
 
 - (void)customSetup
@@ -48,8 +49,22 @@
     MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];
     [mapView setCamera:camera animated:YES];
     NSLog(@"set camera");
-//    [mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
-//    NSLog(@"ssss");
+}
+-(IBAction)saveNote:(UIStoryboardSegue *) segue {
+    NSLog(@"completeSignIn: in ViewController");
+
+    NSLog(@"%@", _noteModel.thisFloor);
+    NSLog(@"%@", _noteModel.thisNumber);
 }
 
+-(IBAction)cancelNote:(UIStoryboardSegue *) segue {
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"showNote"]){
+        NoteViewController *noteVC = segue.destinationViewController;
+        noteVC.model = self.noteModel;
+    }
+
+}
 @end

@@ -11,9 +11,15 @@
 #import "SWRevealViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Model.h"
+#import "NoteViewController.h"
+
 
 @interface MapViewController : UIViewController 
 @property (nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIButton *set;
 @property (nonatomic, assign) Boolean city;
+@property (strong, nonatomic) Model *settingModel;
+@property (strong, nonatomic) Model *noteModel;
+
 @end

@@ -70,22 +70,6 @@
     }
 }
 
-- (IBAction)cityy:(id)sender {
-    if([sender isOn]){
-        
-    }else{
-        
-    }
-}
-
-- (IBAction)multii:(id)sender {
-    if([sender isOn]){
-        
-    }else{
-        
-    }
-}
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -122,20 +106,17 @@
 
 
 #pragma mark - Navigation
-
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    /*
+ 
     if ( [sender isKindOfClass:[UITableViewCell class]] )
     {
         SWRevealViewControllerSegueSetController *swSegue = (SWRevealViewControllerSegueSetController*) segue;
         swSegue.perform
         
     }
-    */
+    
 }
-
-
-- (IBAction)multi:(id)sender {
-}
+*/
 @end
