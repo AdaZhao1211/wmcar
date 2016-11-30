@@ -21,5 +21,5 @@
 @property (nonatomic, assign) Boolean city;
 @property (strong, nonatomic) Model *settingModel;
 @property (strong, nonatomic) Model *noteModel;
-
+@property (nonatomic, retain) MKPointAnnotation *centerAnnotation;
 @end

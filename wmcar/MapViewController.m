@@ -8,7 +8,7 @@
 
 #import "MapViewController.h"
 
-@interface MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate> {
+@interface MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate> {
     CLLocationManager *locationmanager;
     __weak IBOutlet MKMapView *myMapView;
 }
@@ -25,11 +25,21 @@
         [locationmanager requestWhenInUseAuthorization];
     }
     [myMapView setShowsUserLocation: YES];
+    [myMapView setShowsBuildings:YES];
     myMapView.delegate = self;
     locationmanager.delegate = self;
     [locationmanager startUpdatingLocation];
     self.noteModel = [Model new];
     self.settingModel = [Model new];
+    
+    //gesture
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    panGesture.delegate = self;
+    [myMapView addGestureRecognizer:panGesture];
+    
+    UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    pinchGesture.delegate = self;
+    [myMapView addGestureRecognizer:pinchGesture];
 }
 
 - (void)customSetup
@@ -47,9 +57,19 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];
-    [mapView setCamera:camera animated:YES];
-    NSLog(@"set camera");
+    [mapView setCamera:camera animated:NO];
+    MKPointAnnotation *pin1 = [MKPointAnnotation new];
+    pin1.coordinate = myMapView.centerCoordinate;
+    pin1.title = @"My Car";
+    pin1.subtitle = [NSString stringWithFormat:@"%f, %f", pin1.coordinate.latitude, pin1.coordinate.longitude];
+    [myMapView addAnnotation:pin1];
+    self.centerAnnotation = pin1;
 }
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+    _centerAnnotation.coordinate = mapView.centerCoordinate;
+    _centerAnnotation.subtitle = [NSString stringWithFormat:@"%f, %f", _centerAnnotation.coordinate.latitude, _centerAnnotation.coordinate.longitude];
+}
+
 -(IBAction)saveNote:(UIStoryboardSegue *) segue {
     NSLog(@"completeSignIn: in ViewController");
 
@@ -58,6 +78,13 @@
 }
 
 -(IBAction)cancelNote:(UIStoryboardSegue *) segue {
+}
+
+//gesture
+- (void)handleGesture:(UIGestureRecognizer *)gestureRecognizer
+{
+    _centerAnnotation.coordinate = myMapView.centerCoordinate;
+    _centerAnnotation.subtitle = [NSString stringWithFormat:@"%f, %f", _centerAnnotation.coordinate.latitude, _centerAnnotation.coordinate.longitude];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
