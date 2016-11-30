@@ -72,7 +72,7 @@
     temp.title = @"My Car";
     temp.subtitle = [NSString stringWithFormat:@"%f, %f", temp.coordinate.latitude, temp.coordinate.longitude];
     [myMapView addAnnotation:temp];
-    self.centerAnnotation = temp;
+    _centerAnnotation = temp;
 }
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     _centerAnnotation.coordinate = mapView.centerCoordinate;
@@ -80,14 +80,14 @@
 }
 
 -(IBAction)saveNote:(UIStoryboardSegue *) segue {
-    NSLog(@"%@", _noteModel.thisFloor);
-    NSLog(@"%@", _noteModel.thisNumber);
     MKPointAnnotation *pin = [MKPointAnnotation new];
     pin.coordinate = myMapView.centerCoordinate;
     pin.title = @"My Car";
     pin.subtitle = [NSString stringWithFormat:@"%@, %@", _noteModel.thisFloor, _noteModel.thisNumber];
     [_carArray addObject:pin];
     [myMapView addAnnotation:pin];
+    [myMapView removeAnnotation:_centerAnnotation];
+    [_set setTitle:@"Find My Car" forState:UIControlStateNormal];
 }
 
 -(IBAction)cancelNote:(UIStoryboardSegue *) segue {
