@@ -18,8 +18,12 @@
 @interface MapViewController : UIViewController 
 @property (nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIButton *set;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (nonatomic, assign) Boolean city;
+@property (nonatomic, assign) Boolean multi;
 @property (strong, nonatomic) Model *settingModel;
 @property (strong, nonatomic) Model *noteModel;
 @property (nonatomic, retain) MKPointAnnotation *centerAnnotation;
+@property (strong, nonatomic) NSMutableArray *carArray;
+
 @end

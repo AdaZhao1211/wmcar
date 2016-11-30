@@ -123,10 +123,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2E-iO-gTe">
+                                <rect key="frame" x="300" y="609" width="41" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="add.png"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Noz-oV-J7m">
-                                <rect key="frame" x="119" y="623" width="136" height="30"/>
+                                <rect key="frame" x="109" y="605" width="157" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Set Pinpoint">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -143,6 +149,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addButton" destination="t2E-iO-gTe" id="mMr-s4-oJL"/>
                         <outlet property="myMapView" destination="DxT-ZF-SIU" id="rtN-0D-5Bp"/>
                         <outlet property="revealButtonItem" destination="Ynv-ZE-LU4" id="toD-Sm-MK5"/>
                         <outlet property="set" destination="Noz-oV-J7m" id="mZF-U4-GQc"/>
@@ -258,6 +265,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add.png" width="50" height="50"/>
         <image name="camera.png" width="40" height="40"/>
         <image name="settings.png" width="25" height="25"/>
     </resources>

@@ -19,7 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customSetup];
+    //settttttings
     _city = YES;
+    _multi = NO;
+    
+    //map
     locationmanager = [CLLocationManager new];
     if([locationmanager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
         [locationmanager requestWhenInUseAuthorization];
@@ -40,6 +44,10 @@
     UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
     pinchGesture.delegate = self;
     [myMapView addGestureRecognizer:pinchGesture];
+    
+    //car array
+    _carArray = [NSMutableArray new];
+    _addButton.enabled = _multi;
 }
 
 - (void)customSetup
@@ -58,12 +66,13 @@
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];
     [mapView setCamera:camera animated:NO];
-    MKPointAnnotation *pin1 = [MKPointAnnotation new];
-    pin1.coordinate = myMapView.centerCoordinate;
-    pin1.title = @"My Car";
-    pin1.subtitle = [NSString stringWithFormat:@"%f, %f", pin1.coordinate.latitude, pin1.coordinate.longitude];
-    [myMapView addAnnotation:pin1];
-    self.centerAnnotation = pin1;
+    
+    MKPointAnnotation *temp = [MKPointAnnotation new];
+    temp.coordinate = myMapView.centerCoordinate;
+    temp.title = @"My Car";
+    temp.subtitle = [NSString stringWithFormat:@"%f, %f", temp.coordinate.latitude, temp.coordinate.longitude];
+    [myMapView addAnnotation:temp];
+    self.centerAnnotation = temp;
 }
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     _centerAnnotation.coordinate = mapView.centerCoordinate;
@@ -71,10 +80,14 @@
 }
 
 -(IBAction)saveNote:(UIStoryboardSegue *) segue {
-    NSLog(@"completeSignIn: in ViewController");
-
     NSLog(@"%@", _noteModel.thisFloor);
     NSLog(@"%@", _noteModel.thisNumber);
+    MKPointAnnotation *pin = [MKPointAnnotation new];
+    pin.coordinate = myMapView.centerCoordinate;
+    pin.title = @"My Car";
+    pin.subtitle = [NSString stringWithFormat:@"%@, %@", _noteModel.thisFloor, _noteModel.thisNumber];
+    [_carArray addObject:pin];
+    [myMapView addAnnotation:pin];
 }
 
 -(IBAction)cancelNote:(UIStoryboardSegue *) segue {

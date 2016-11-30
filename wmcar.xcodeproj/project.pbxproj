@@ -23,6 +23,7 @@
 		180EB52D1DE9DD8F00DCD7AA /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EB52C1DE9DD8F00DCD7AA /* NoteViewController.m */; };
 		180EB52F1DEA48E000DCD7AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180EB52E1DEA48E000DCD7AA /* CoreLocation.framework */; };
 		1815C3061DECC99800CEF780 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 1815C3051DECC99800CEF780 /* Model.m */; };
+		1815C3091DEF678500CEF780 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 1815C3081DEF678500CEF780 /* add.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		180EB52E1DEA48E000DCD7AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1815C3041DECC99800CEF780 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		1815C3051DECC99800CEF780 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		1815C3081DEF678500CEF780 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		180EB5211DE4D0D600DCD7AA /* Assests */ = {
 			isa = PBXGroup;
 			children = (
+				1815C3081DEF678500CEF780 /* add.png */,
 				180EB5291DE9DA7600DCD7AA /* camera.png */,
 				180EB51C1DE38CD300DCD7AA /* settings.png */,
 			);
@@ -316,6 +319,7 @@
 				180EB51D1DE38CD300DCD7AA /* settings.png in Resources */,
 				180EB4E31DE2132100DCD7AA /* LaunchScreen.storyboard in Resources */,
 				180EB4E01DE2132100DCD7AA /* Assets.xcassets in Resources */,
+				1815C3091DEF678500CEF780 /* add.png in Resources */,
 				180EB4DE1DE2132100DCD7AA /* Main.storyboard in Resources */,
 				180EB52A1DE9DA7600DCD7AA /* camera.png in Resources */,
 			);
