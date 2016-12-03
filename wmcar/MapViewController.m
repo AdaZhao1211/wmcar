@@ -11,6 +11,7 @@
 @interface MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate> {
     CLLocationManager *locationmanager;
     __weak IBOutlet MKMapView *myMapView;
+    int carCount;
 }
 @end
 
@@ -20,7 +21,7 @@
     [super viewDidLoad];
     [self customSetup];
     //settttttings
-    _city = YES;
+    _city = NO;
     _multi = NO;
     
     //map
@@ -47,7 +48,7 @@
     
     //car array
     _carArray = [NSMutableArray new];
-    _addButton.enabled = _multi;
+    _addButton.enabled = NO;
 }
 
 - (void)customSetup
@@ -58,10 +59,51 @@
 }
 
 - (IBAction)setPinpoint:(id)sender {
-    if(_city){
-        [self performSegueWithIdentifier:@"showNote" sender:nil];
+    if([_set.titleLabel.text isEqual: @"Set Pinpoint"]){
+        if(_city){
+            [self performSegueWithIdentifier:@"showNote" sender:nil];
+            if(_multi){
+                _addButton.enabled = YES;
+            }
+        }else{
+            MKPointAnnotation *pin = [MKPointAnnotation new];
+            pin.coordinate = myMapView.centerCoordinate;
+            pin.title = @"My Car";
+            [_carArray addObject:pin];
+            [myMapView addAnnotation:pin];
+            [myMapView removeAnnotation:_centerAnnotation];
+            [_set setTitle:@"Find My Car" forState:UIControlStateNormal];
+            if(_multi){
+                _addButton.enabled = YES;
+            }
+        }
+    }else{
+        if(_multi){
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Please select a pin" message:@"You are in multi-pinpoint mode" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            if(_carArray.count == 1){
+                //navigate
+            }else{
+                //alert
+            }
+        }else{
+
+        }
     }
 }
+
+
+
+- (IBAction)addPinpoint:(id)sender {
+    [_set setTitle:@"Set Pinpoint" forState:UIControlStateNormal];
+    [myMapView addAnnotation:_centerAnnotation];
+    _addButton.enabled = NO;
+}
+
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];

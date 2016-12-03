@@ -127,6 +127,9 @@
                                 <rect key="frame" x="300" y="609" width="41" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add.png"/>
+                                <connections>
+                                    <action selector="addPinpoint:" destination="CRY-gE-f6f" eventType="touchUpInside" id="9cd-g0-XUs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Noz-oV-J7m">
                                 <rect key="frame" x="109" y="605" width="157" height="49"/>

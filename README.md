@@ -9,3 +9,10 @@ You can also enjoy the WMCar on your Apple Watch. You can pinpoint your location
 [Customize Table Cell] (http://www.appcoda.com/customize-table-view-cells-for-uitableview/)
 
 [CSCI-UA.0480-002 iOS Programming] (http://cs.nyu.edu/courses/fall16/CSCI-UA.0480-002/)
+
+#To-do
+Direction
+data between setting view and map view
+local memory
+Camera, taking photos in the note view
+search bar to pin the car location
