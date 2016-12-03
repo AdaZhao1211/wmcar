@@ -13,8 +13,6 @@ You can also enjoy the WMCar on your Apple Watch. You can pinpoint your location
 #To-do
 pin, selected mode
 
-when close, change the button to FOUND and clear the route
-
 data between setting view and map view
 
 local memory

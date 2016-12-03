@@ -17,6 +17,7 @@
 
 @implementation MapViewController
 MKRoute *routeDetails;
+int thepin = -1;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customSetup];
@@ -78,10 +79,11 @@ MKRoute *routeDetails;
                 _addButton.enabled = YES;
             }
         }
-    }else{
+    }else if([_set.titleLabel.text isEqual: @"Find My Car"]){
         if(_multi){
             if(_carArray.count == 1){
                 //navigate
+                thepin = 0;
                 NSLog(@"in multi mode with only one pin, requeting directions");
                 MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
                 MKPointAnnotation *temp = [_carArray objectAtIndex:0];
@@ -110,14 +112,14 @@ MKRoute *routeDetails;
                 [self presentViewController:alert animated:YES completion:nil];
             }
         }else{
+            thepin = 0;
             NSLog(@"in non multi mode, requeting directions");
             MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
             MKPointAnnotation *temp = [_carArray objectAtIndex:0];
             MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:temp.coordinate];
             [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
             [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placemark]];
-            [directionsRequest setTransportType: MKDirectionsTransportTypeWalking];
-            directionsRequest.transportType = MKDirectionsTransportTypeAutomobile;
+            [directionsRequest setTransportType:MKDirectionsTransportTypeWalking];
             MKDirections *directions = [[MKDirections alloc] initWithRequest:directionsRequest];
             [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
                 if (error) {
@@ -125,13 +127,27 @@ MKRoute *routeDetails;
                 } else {
                     NSLog(@"no error");
                     //got the call back
+                    NSLog(@"%lu", (unsigned long)routeDetails.transportType);
                     routeDetails = response.routes.lastObject;
                     [myMapView addOverlay:routeDetails.polyline];
                 }
             }];
         }
+        [_set setTitle:@"Found" forState:UIControlStateNormal];
+    }else{
+        [_set setTitle:@"Set Pinpoint" forState:UIControlStateNormal];
+        [myMapView removeOverlay:routeDetails.polyline];
+        [myMapView removeAnnotation:[_carArray objectAtIndex:thepin]];
+        [_carArray removeObjectAtIndex:thepin];
+        thepin = -1;
+        if(_carArray.count == 0){
+            [myMapView addAnnotation:_centerAnnotation];
+        }
     }
 }
+///////////end of bottom button
+
+
 
 //overlay the route details
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
@@ -150,7 +166,7 @@ MKRoute *routeDetails;
 
 //zoom in to current location
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-    MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];
+    MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:1000];
     [mapView setCamera:camera animated:NO];
     
     MKPointAnnotation *temp = [MKPointAnnotation new];
