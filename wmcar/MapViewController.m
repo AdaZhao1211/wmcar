@@ -23,7 +23,7 @@ int thepin = -1;
     [self customSetup];
     //settttttings
     _city = NO;
-    _multi = NO;
+    _multi = YES;
     
     //map
     locationmanager = [CLLocationManager new];
@@ -64,9 +64,6 @@ int thepin = -1;
     if([_set.titleLabel.text isEqual: @"Set Pinpoint"]){
         if(_city){
             [self performSegueWithIdentifier:@"showNote" sender:nil];
-            if(_multi){
-                _addButton.enabled = YES;
-            }
         }else{
             MKPointAnnotation *pin = [MKPointAnnotation new];
             pin.coordinate = myMapView.centerCoordinate;
@@ -79,9 +76,11 @@ int thepin = -1;
                 _addButton.enabled = YES;
             }
         }
+        
     }else if([_set.titleLabel.text isEqual: @"Find My Car"]){
         if(_multi){
             if(_carArray.count == 1){
+                _addButton.enabled = NO;
                 //navigate
                 thepin = 0;
                 NSLog(@"in multi mode with only one pin, requeting directions");
@@ -91,7 +90,6 @@ int thepin = -1;
                 [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
                 [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placemark]];
                 [directionsRequest setTransportType: MKDirectionsTransportTypeWalking];
-                directionsRequest.transportType = MKDirectionsTransportTypeAutomobile;
                 MKDirections *directions = [[MKDirections alloc] initWithRequest:directionsRequest];
                 [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
                     if (error) {
@@ -103,13 +101,45 @@ int thepin = -1;
                         [myMapView addOverlay:routeDetails.polyline];
                     }
                 }];
+                [_set setTitle:@"Found" forState:UIControlStateNormal];
             }else{
-                //alert
-                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Please select a pin" message:@"You are in multi-pinpoint mode" preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                      handler:^(UIAlertAction * action) {}];
-                [alert addAction:defaultAction];
-                [self presentViewController:alert animated:YES completion:nil];
+                if(myMapView.selectedAnnotations.count == 0){
+                    //if nothing is chosen, alert
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Please select a pin" message:@"You are in multi-pinpoint mode" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction * action) {}];
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }else{
+                    MKPointAnnotation *selected = [myMapView.selectedAnnotations objectAtIndex:0];
+                    int tempcount = (int)_carArray.count;
+                    for(int i = 0; i < tempcount; i++){
+                        MKPointAnnotation *tempcar = [_carArray objectAtIndex:i];
+                        if(tempcar.coordinate.latitude == selected.coordinate.latitude && tempcar.coordinate.longitude == selected.coordinate.longitude){
+                            thepin = i;
+                            break;
+                        }
+                    }
+                    NSLog(@"in multi mode with more than one pin, requeting directions");
+                    MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
+                    MKPointAnnotation *temp = [_carArray objectAtIndex:thepin];
+                    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:temp.coordinate];
+                    [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
+                    [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placemark]];
+                    [directionsRequest setTransportType: MKDirectionsTransportTypeWalking];
+                    MKDirections *directions = [[MKDirections alloc] initWithRequest:directionsRequest];
+                    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+                        if (error) {
+                            NSLog(@"Error %@", error.description);
+                        } else {
+                            NSLog(@"no error");
+                            routeDetails = response.routes.lastObject;
+                            [myMapView addOverlay:routeDetails.polyline];
+                        }
+                    }];
+                    _addButton.enabled = NO;
+                    [_set setTitle:@"Found" forState:UIControlStateNormal];
+                }
             }
         }else{
             thepin = 0;
@@ -132,16 +162,20 @@ int thepin = -1;
                     [myMapView addOverlay:routeDetails.polyline];
                 }
             }];
+            [_set setTitle:@"Found" forState:UIControlStateNormal];
         }
-        [_set setTitle:@"Found" forState:UIControlStateNormal];
     }else{
-        [_set setTitle:@"Set Pinpoint" forState:UIControlStateNormal];
         [myMapView removeOverlay:routeDetails.polyline];
         [myMapView removeAnnotation:[_carArray objectAtIndex:thepin]];
         [_carArray removeObjectAtIndex:thepin];
         thepin = -1;
         if(_carArray.count == 0){
             [myMapView addAnnotation:_centerAnnotation];
+            [_set setTitle:@"Set Pinpoint" forState:UIControlStateNormal];
+            _addButton.enabled = NO;
+        }else{
+            [_set setTitle:@"Find My Car" forState:UIControlStateNormal];
+            _addButton.enabled = YES;
         }
     }
 }
@@ -193,6 +227,7 @@ int thepin = -1;
     [myMapView addAnnotation:pin];
     [myMapView removeAnnotation:_centerAnnotation];
     [_set setTitle:@"Find My Car" forState:UIControlStateNormal];
+    _addButton.enabled = YES;
 }
 
 -(IBAction)cancelNote:(UIStoryboardSegue *) segue {
