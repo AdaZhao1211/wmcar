@@ -25,6 +25,9 @@
 @property (strong, nonatomic) Model *noteModel;
 @property (nonatomic, retain) MKPointAnnotation *centerAnnotation;
 @property (strong, nonatomic) NSMutableArray *carArray;
+@property (strong, nonatomic) CLLocation *destination;
+//implement the destination when the user chooses a pin in city mode
+//release it when pressed FOUND
 
 
 

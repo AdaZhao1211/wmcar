@@ -22,7 +22,7 @@ int thepin = -1;
     [super viewDidLoad];
     [self customSetup];
     //settttttings
-    _city = NO;
+    _city = YES;
     _multi = YES;
     
     //map
@@ -61,7 +61,7 @@ int thepin = -1;
 
 /////////////////bottom button
 - (IBAction)setPinpoint:(id)sender {
-    if([_set.titleLabel.text isEqual: @"Set Pinpoint"]){
+    if([_set.titleLabel.text isEqualToString: @"Set Pinpoint"]){
         if(_city){
             [self performSegueWithIdentifier:@"showNote" sender:nil];
         }else{
@@ -77,7 +77,7 @@ int thepin = -1;
             }
         }
         
-    }else if([_set.titleLabel.text isEqual: @"Find My Car"]){
+    }else if([_set.titleLabel.text isEqualToString: @"Find My Car"]){
         if(_multi){
             if(_carArray.count == 1){
                 _addButton.enabled = NO;
@@ -86,6 +86,9 @@ int thepin = -1;
                 NSLog(@"in multi mode with only one pin, requeting directions");
                 MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
                 MKPointAnnotation *temp = [_carArray objectAtIndex:0];
+                if(_city){
+                    _destination = [[CLLocation alloc] initWithLatitude:temp.coordinate.latitude longitude:temp.coordinate.longitude];
+                }
                 MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:temp.coordinate];
                 [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
                 [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placemark]];
@@ -123,6 +126,9 @@ int thepin = -1;
                     NSLog(@"in multi mode with more than one pin, requeting directions");
                     MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
                     MKPointAnnotation *temp = [_carArray objectAtIndex:thepin];
+                    if(_city){
+                        _destination = [[CLLocation alloc] initWithLatitude:temp.coordinate.latitude longitude:temp.coordinate.longitude];
+                    }
                     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:temp.coordinate];
                     [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
                     [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placemark]];
@@ -146,6 +152,9 @@ int thepin = -1;
             NSLog(@"in non multi mode, requeting directions");
             MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
             MKPointAnnotation *temp = [_carArray objectAtIndex:0];
+            if(_city){
+                _destination = [[CLLocation alloc] initWithLatitude:temp.coordinate.latitude longitude:temp.coordinate.longitude];
+            }
             MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:temp.coordinate];
             [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
             [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placemark]];
@@ -198,18 +207,27 @@ int thepin = -1;
     _addButton.enabled = NO;
 }
 
-//zoom in to current location
+//zoom in to current location, update user location
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:1000];
     [mapView setCamera:camera animated:NO];
     
-    MKPointAnnotation *temp = [MKPointAnnotation new];
-    temp.coordinate = myMapView.centerCoordinate;
-    temp.title = @"My Car";
-    temp.subtitle = [NSString stringWithFormat:@"%f, %f", temp.coordinate.latitude, temp.coordinate.longitude];
-    [myMapView addAnnotation:temp];
-    _centerAnnotation = temp;
+    if([_set.titleLabel.text isEqualToString: @"Set Pinpoint"]){
+        MKPointAnnotation *temp = [MKPointAnnotation new];
+        temp.coordinate = myMapView.centerCoordinate;
+        temp.title = @"My Car";
+        temp.subtitle = [NSString stringWithFormat:@"%f, %f", temp.coordinate.latitude, temp.coordinate.longitude];
+        [myMapView addAnnotation:temp];
+        _centerAnnotation = temp;
+    }
+    if([_set.titleLabel.text isEqualToString: @"Found"] && _city){
+        if([_destination distanceFromLocation:userLocation.location] < 100){
+            NSLog(@"distance less than 100m");
+            //show the image if implemented
+        }
+    }
 }
+    
 
 //move the pin
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
@@ -245,7 +263,6 @@ int thepin = -1;
         NoteViewController *noteVC = segue.destinationViewController;
         noteVC.model = self.noteModel;
     }
-
 }
 
 //direction
