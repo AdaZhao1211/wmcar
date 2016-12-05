@@ -36,8 +36,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if([segue.identifier isEqualToString:@"saveNote"]){
-        NSLog(@"%@", _floorField.text);
-        NSLog(@"%@", _numField.text);
+        _model.thisCar = _carField.text;
         _model.thisNumber = _numField.text;
         _model.thisFloor = _floorField.text;
     }

@@ -10,6 +10,7 @@
 #import "Model.h"
 
 @interface NoteViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *carField;
 
 @property (strong, nonatomic) Model *model;
 @property (weak, nonatomic) IBOutlet UITextField *floorField;

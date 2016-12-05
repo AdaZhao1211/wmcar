@@ -186,6 +186,7 @@ int thepin = -1;
             [_set setTitle:@"Find My Car" forState:UIControlStateNormal];
             _addButton.enabled = YES;
         }
+        _destination = nil;
     }
 }
 ///////////end of bottom button
@@ -215,8 +216,6 @@ int thepin = -1;
     if([_set.titleLabel.text isEqualToString: @"Set Pinpoint"]){
         MKPointAnnotation *temp = [MKPointAnnotation new];
         temp.coordinate = myMapView.centerCoordinate;
-        temp.title = @"My Car";
-        temp.subtitle = [NSString stringWithFormat:@"%f, %f", temp.coordinate.latitude, temp.coordinate.longitude];
         [myMapView addAnnotation:temp];
         _centerAnnotation = temp;
     }
@@ -239,7 +238,7 @@ int thepin = -1;
 -(IBAction)saveNote:(UIStoryboardSegue *) segue {
     MKPointAnnotation *pin = [MKPointAnnotation new];
     pin.coordinate = myMapView.centerCoordinate;
-    pin.title = @"My Car";
+    pin.title = _noteModel.thisCar;
     pin.subtitle = [NSString stringWithFormat:@"%@, %@", _noteModel.thisFloor, _noteModel.thisNumber];
     [_carArray addObject:pin];
     [myMapView addAnnotation:pin];
