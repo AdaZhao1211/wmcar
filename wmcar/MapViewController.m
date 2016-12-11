@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate> {
     CLLocationManager *locationmanager;
@@ -21,6 +22,7 @@ int thepin = -1;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customSetup];
+    
     //settttttings
     _city = YES;
     _multi = NO;
@@ -50,8 +52,6 @@ int thepin = -1;
     //car array
     _carArray = [NSMutableArray new];
     _addButton.enabled = NO;
-    
-    
 }
 
 - (void)customSetup
@@ -180,6 +180,12 @@ int thepin = -1;
         [myMapView removeAnnotation:[_carArray objectAtIndex:thepin]];
         [_carArray removeObjectAtIndex:thepin];
         thepin = -1;
+        NSString *path = [ [NSBundle mainBundle] pathForResource:@"success" ofType:@"wav"];
+        
+        SystemSoundID theSound;
+        
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path], &theSound);
+        AudioServicesPlaySystemSound (theSound);
         if(_carArray.count == 0){
             [myMapView addAnnotation:_centerAnnotation];
             [_set setTitle:@"Set Pinpoint" forState:UIControlStateNormal];

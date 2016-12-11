@@ -15,7 +15,6 @@
 #import "NoteViewController.h"
 #import "SettingTableViewController.h"
 
-
 @interface MapViewController : UIViewController 
 @property (nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIButton *set;
