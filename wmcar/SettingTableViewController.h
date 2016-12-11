@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Model.h"
 
 @interface SettingTableViewController : UITableViewController
-@property (weak, nonatomic) Model *settingModel;
+@property (strong, nonatomic) IBOutlet UISwitch *cityswitch;
+@property (strong, nonatomic) IBOutlet UISwitch *multiswitch;
+
 @end

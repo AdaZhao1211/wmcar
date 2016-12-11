@@ -8,6 +8,7 @@
 
 #import "SettingTableViewController.h"
 #import "SWRevealViewController.h"
+#import "MapViewController.h"
 
 @interface SettingTableViewController ()
 
@@ -17,6 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    MapViewController *front = [self.revealViewController.frontViewController.childViewControllers objectAtIndex:0];
+    [_cityswitch setOn:front.city];
+    [_multiswitch setOn: front.multi];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -29,46 +34,33 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    
-    switch ( indexPath.row )
-    {
-        case 0:
-            CellIdentifier = @"title";
-            break;
-        case 1:
-            CellIdentifier = @"city";
-            break;
-            
-        case 2:
-            CellIdentifier = @"pin";
-            break;
-    }
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row==0){
-        return 60;
-    }
-    else {
-        return 44;
+- (IBAction)changecity:(id)sender {
+    MapViewController *front = [self.revealViewController.frontViewController.childViewControllers objectAtIndex:0];
+    if([front.carArray count] == 0){
+        front.city = !front.city;
+    }else{
+        [_cityswitch setOn:front.city];
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Please clear your pin" message:@"clear your pin before changing mode" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
+- (IBAction)changemulti:(id)sender {
+    MapViewController *front = [self.revealViewController.frontViewController.childViewControllers objectAtIndex:0];
+    if([front.carArray count] == 0){
+        front.multi = !front.multi;
+    }else{
+        [_multiswitch setOn:front.multi];
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Please clear your pin" message:@"clear your pin before changing mode" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -103,7 +95,6 @@
     return YES;
 }
 */
-
 
 #pragma mark - Navigation
 /*

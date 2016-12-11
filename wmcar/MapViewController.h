@@ -13,6 +13,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Model.h"
 #import "NoteViewController.h"
+#import "SettingTableViewController.h"
 
 
 @interface MapViewController : UIViewController 

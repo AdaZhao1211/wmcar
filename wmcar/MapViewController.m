@@ -23,7 +23,7 @@ int thepin = -1;
     [self customSetup];
     //settttttings
     _city = YES;
-    _multi = YES;
+    _multi = NO;
     
     //map
     locationmanager = [CLLocationManager new];
@@ -50,6 +50,8 @@ int thepin = -1;
     //car array
     _carArray = [NSMutableArray new];
     _addButton.enabled = NO;
+    
+    
 }
 
 - (void)customSetup
@@ -265,24 +267,24 @@ int thepin = -1;
 }
 
 //direction
--(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
-    // If it's the user location, just return nil.
-    if ([annotation isKindOfClass:[MKUserLocation class]])
-        return nil;
-    // Handle any custom annotations.
-    if ([annotation isKindOfClass:[MKPointAnnotation class]]) {
-        // Try to dequeue an existing pin view first.
-        MKPinAnnotationView *pinView = (MKPinAnnotationView*)[myMapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
-        if (!pinView)
-        {
-            // If an existing pin view was not available, create one.
-            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
-            pinView.canShowCallout = YES;
-        } else {
-            pinView.annotation = annotation;
-        }
-        return pinView;
-    }
-    return nil;
-}
+//-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+//    // If it's the user location, just return nil.
+//    if ([annotation isKindOfClass:[MKUserLocation class]])
+//        return nil;
+//    // Handle any custom annotations.
+//    if ([annotation isKindOfClass:[MKPointAnnotation class]]) {
+//        // Try to dequeue an existing pin view first.
+//        MKPinAnnotationView *pinView = (MKPinAnnotationView*)[myMapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+//        if (!pinView)
+//        {
+//            // If an existing pin view was not available, create one.
+//            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+//            pinView.canShowCallout = YES;
+//        } else {
+//            pinView.annotation = annotation;
+//        }
+//        return pinView;
+//    }
+//    return nil;
+//}
 @end
