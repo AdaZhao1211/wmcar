@@ -28,6 +28,13 @@
 		182E6C121DFD0F0F0060DD3B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E6C111DFD0F0F0060DD3B /* AVFoundation.framework */; };
 		182E6C141DFD116E0060DD3B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E6C131DFD116E0060DD3B /* AudioToolbox.framework */; };
 		182E6C161DFD12F00060DD3B /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 182E6C151DFD12F00060DD3B /* launch.jpg */; };
+		189ACFC81DFF36FF0073C2ED /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189ACFC61DFF36FF0073C2ED /* Interface.storyboard */; };
+		189ACFCA1DFF36FF0073C2ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189ACFC91DFF36FF0073C2ED /* Assets.xcassets */; };
+		189ACFD11DFF36FF0073C2ED /* wmcarWK Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 189ACFD01DFF36FF0073C2ED /* wmcarWK Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		189ACFD71DFF36FF0073C2ED /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189ACFD61DFF36FF0073C2ED /* InterfaceController.m */; };
+		189ACFDA1DFF36FF0073C2ED /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189ACFD91DFF36FF0073C2ED /* ExtensionDelegate.m */; };
+		189ACFDC1DFF36FF0073C2ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189ACFDB1DFF36FF0073C2ED /* Assets.xcassets */; };
+		189ACFE01DFF36FF0073C2ED /* wmcarWK.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 189ACFC41DFF36FF0073C2ED /* wmcarWK.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +52,46 @@
 			remoteGlobalIDString = 180EB4CF1DE2132100DCD7AA;
 			remoteInfo = wmcar;
 		};
+		189ACFD21DFF36FF0073C2ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180EB4C81DE2132100DCD7AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 189ACFCF1DFF36FF0073C2ED;
+			remoteInfo = "wmcarWK Extension";
+		};
+		189ACFDE1DFF36FF0073C2ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180EB4C81DE2132100DCD7AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 189ACFC31DFF36FF0073C2ED;
+			remoteInfo = wmcarWK;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		189ACFE61DFF36FF0073C2ED /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				189ACFD11DFF36FF0073C2ED /* wmcarWK Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		189ACFE81DFF36FF0073C2ED /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				189ACFE01DFF36FF0073C2ED /* wmcarWK.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		180EB4D01DE2132100DCD7AA /* wmcar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wmcar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +127,17 @@
 		182E6C111DFD0F0F0060DD3B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		182E6C131DFD116E0060DD3B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		182E6C151DFD12F00060DD3B /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
+		189ACFC41DFF36FF0073C2ED /* wmcarWK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wmcarWK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		189ACFC71DFF36FF0073C2ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		189ACFC91DFF36FF0073C2ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		189ACFCB1DFF36FF0073C2ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		189ACFD01DFF36FF0073C2ED /* wmcarWK Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "wmcarWK Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		189ACFD51DFF36FF0073C2ED /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		189ACFD61DFF36FF0073C2ED /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		189ACFD81DFF36FF0073C2ED /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		189ACFD91DFF36FF0073C2ED /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		189ACFDB1DFF36FF0073C2ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		189ACFDD1DFF36FF0073C2ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +166,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		189ACFCD1DFF36FF0073C2ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -119,6 +183,8 @@
 				180EB4D21DE2132100DCD7AA /* wmcar */,
 				180EB4EC1DE2132100DCD7AA /* wmcarTests */,
 				180EB4F71DE2132100DCD7AA /* wmcarUITests */,
+				189ACFC51DFF36FF0073C2ED /* wmcarWK */,
+				189ACFD41DFF36FF0073C2ED /* wmcarWK Extension */,
 				180EB4D11DE2132100DCD7AA /* Products */,
 				180EB5221DE4FA8A00DCD7AA /* Frameworks */,
 			);
@@ -130,6 +196,8 @@
 				180EB4D01DE2132100DCD7AA /* wmcar.app */,
 				180EB4E91DE2132100DCD7AA /* wmcarTests.xctest */,
 				180EB4F41DE2132100DCD7AA /* wmcarUITests.xctest */,
+				189ACFC41DFF36FF0073C2ED /* wmcarWK.app */,
+				189ACFD01DFF36FF0073C2ED /* wmcarWK Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,6 +292,29 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		189ACFC51DFF36FF0073C2ED /* wmcarWK */ = {
+			isa = PBXGroup;
+			children = (
+				189ACFC61DFF36FF0073C2ED /* Interface.storyboard */,
+				189ACFC91DFF36FF0073C2ED /* Assets.xcassets */,
+				189ACFCB1DFF36FF0073C2ED /* Info.plist */,
+			);
+			path = wmcarWK;
+			sourceTree = "<group>";
+		};
+		189ACFD41DFF36FF0073C2ED /* wmcarWK Extension */ = {
+			isa = PBXGroup;
+			children = (
+				189ACFD51DFF36FF0073C2ED /* InterfaceController.h */,
+				189ACFD61DFF36FF0073C2ED /* InterfaceController.m */,
+				189ACFD81DFF36FF0073C2ED /* ExtensionDelegate.h */,
+				189ACFD91DFF36FF0073C2ED /* ExtensionDelegate.m */,
+				189ACFDB1DFF36FF0073C2ED /* Assets.xcassets */,
+				189ACFDD1DFF36FF0073C2ED /* Info.plist */,
+			);
+			path = "wmcarWK Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,10 +325,12 @@
 				180EB4CC1DE2132100DCD7AA /* Sources */,
 				180EB4CD1DE2132100DCD7AA /* Frameworks */,
 				180EB4CE1DE2132100DCD7AA /* Resources */,
+				189ACFE81DFF36FF0073C2ED /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				189ACFDF1DFF36FF0073C2ED /* PBXTargetDependency */,
 			);
 			name = wmcar;
 			productName = wmcar;
@@ -280,6 +373,40 @@
 			productReference = 180EB4F41DE2132100DCD7AA /* wmcarUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		189ACFC31DFF36FF0073C2ED /* wmcarWK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 189ACFE71DFF36FF0073C2ED /* Build configuration list for PBXNativeTarget "wmcarWK" */;
+			buildPhases = (
+				189ACFC21DFF36FF0073C2ED /* Resources */,
+				189ACFE61DFF36FF0073C2ED /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				189ACFD31DFF36FF0073C2ED /* PBXTargetDependency */,
+			);
+			name = wmcarWK;
+			productName = wmcarWK;
+			productReference = 189ACFC41DFF36FF0073C2ED /* wmcarWK.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		189ACFCF1DFF36FF0073C2ED /* wmcarWK Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 189ACFE51DFF36FF0073C2ED /* Build configuration list for PBXNativeTarget "wmcarWK Extension" */;
+			buildPhases = (
+				189ACFCC1DFF36FF0073C2ED /* Sources */,
+				189ACFCD1DFF36FF0073C2ED /* Frameworks */,
+				189ACFCE1DFF36FF0073C2ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "wmcarWK Extension";
+			productName = "wmcarWK Extension";
+			productReference = 189ACFD01DFF36FF0073C2ED /* wmcarWK Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -303,6 +430,14 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 180EB4CF1DE2132100DCD7AA;
 					};
+					189ACFC31DFF36FF0073C2ED = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					189ACFCF1DFF36FF0073C2ED = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 180EB4CB1DE2132100DCD7AA /* Build configuration list for PBXProject "wmcar" */;
@@ -321,6 +456,8 @@
 				180EB4CF1DE2132100DCD7AA /* wmcar */,
 				180EB4E81DE2132100DCD7AA /* wmcarTests */,
 				180EB4F31DE2132100DCD7AA /* wmcarUITests */,
+				189ACFC31DFF36FF0073C2ED /* wmcarWK */,
+				189ACFCF1DFF36FF0073C2ED /* wmcarWK Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -352,6 +489,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		189ACFC21DFF36FF0073C2ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189ACFCA1DFF36FF0073C2ED /* Assets.xcassets in Resources */,
+				189ACFC81DFF36FF0073C2ED /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		189ACFCE1DFF36FF0073C2ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189ACFDC1DFF36FF0073C2ED /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +542,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		189ACFCC1DFF36FF0073C2ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189ACFDA1DFF36FF0073C2ED /* ExtensionDelegate.m in Sources */,
+				189ACFD71DFF36FF0073C2ED /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -400,6 +563,16 @@
 			isa = PBXTargetDependency;
 			target = 180EB4CF1DE2132100DCD7AA /* wmcar */;
 			targetProxy = 180EB4F51DE2132100DCD7AA /* PBXContainerItemProxy */;
+		};
+		189ACFD31DFF36FF0073C2ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 189ACFCF1DFF36FF0073C2ED /* wmcarWK Extension */;
+			targetProxy = 189ACFD21DFF36FF0073C2ED /* PBXContainerItemProxy */;
+		};
+		189ACFDF1DFF36FF0073C2ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 189ACFC31DFF36FF0073C2ED /* wmcarWK */;
+			targetProxy = 189ACFDE1DFF36FF0073C2ED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -418,6 +591,14 @@
 				180EB4E21DE2132100DCD7AA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		189ACFC61DFF36FF0073C2ED /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				189ACFC71DFF36FF0073C2ED /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -579,6 +760,66 @@
 			};
 			name = Release;
 		};
+		189ACFE11DFF36FF0073C2ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = wmcarWK_Extension;
+				INFOPLIST_FILE = wmcarWK/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.wmcar.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		189ACFE21DFF36FF0073C2ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = wmcarWK_Extension;
+				INFOPLIST_FILE = wmcarWK/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.wmcar.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		189ACFE31DFF36FF0073C2ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "wmcarWK Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.wmcar.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		189ACFE41DFF36FF0073C2ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "wmcarWK Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.wmcar.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -617,6 +858,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		189ACFE51DFF36FF0073C2ED /* Build configuration list for PBXNativeTarget "wmcarWK Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				189ACFE31DFF36FF0073C2ED /* Debug */,
+				189ACFE41DFF36FF0073C2ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		189ACFE71DFF36FF0073C2ED /* Build configuration list for PBXNativeTarget "wmcarWK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				189ACFE11DFF36FF0073C2ED /* Debug */,
+				189ACFE21DFF36FF0073C2ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

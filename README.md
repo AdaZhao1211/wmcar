@@ -12,10 +12,9 @@ You can also enjoy the WMCar on your Apple Watch. You can pinpoint your location
 [Access camera] (http://www.appcoda.com/ios-programming-camera-iphone-app/)
 
 #To-do
-!!data between setting view and map view
-
-!!local memory
 
 Camera, taking photos in the note view
 
-search bar to pin the car location
+disable/enable after getting the callback
+
+dont add another pin when current location changes

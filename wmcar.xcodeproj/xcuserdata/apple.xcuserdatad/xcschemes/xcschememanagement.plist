@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>wmcarWK.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>180EB4F31DE2132100DCD7AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>189ACFC31DFF36FF0073C2ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
