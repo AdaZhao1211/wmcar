@@ -12,6 +12,7 @@
 
 @interface MapViewController () <MKMapViewDelegate, WCSessionDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate> {
     CLLocationManager *locationmanager;
+    bool start;
     __weak IBOutlet MKMapView *myMapView;
     int carCount;
     double latitude; //coordinates passed from watchOS
@@ -37,6 +38,7 @@ int thepin = -1;
         [session activateSession];
     }
     //settttttings
+    start = YES;
     _city = YES;
     _multi = NO;
     
@@ -176,6 +178,7 @@ int thepin = -1;
         }else{ //code this for iPhone and for Watch Case
             thepin = 0;
             NSLog(@"in non multi mode, requeting directions");
+            _set.enabled = NO;
             MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
             MKPointAnnotation *temp = [_carArray objectAtIndex:0];
             if(_city){
@@ -188,8 +191,7 @@ int thepin = -1;
                 MKPlacemark *sourceplacemark = [[MKPlacemark alloc] initWithCoordinate:watchCoordinatesSource];
                 [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placemark]];
                 [directionsRequest setSource:[[MKMapItem alloc] initWithPlacemark:sourceplacemark]];
-            }
-            else{ //if not, the source and destination from app used
+            }else{ //if not, the source and destination from app used
                 MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:temp.coordinate];
                 [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placemark]];
                 [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
@@ -201,9 +203,10 @@ int thepin = -1;
                 } else {
                     NSLog(@"no error");
                     //got the call back
-                    NSLog(@"%lu", (unsigned long)routeDetails.transportType);
                     routeDetails = response.routes.lastObject;
                     [myMapView addOverlay:routeDetails.polyline];
+                    NSLog(@"done");
+                    _set.enabled = YES;
                 }
             }];
             if (findCar){ //if the Find My Car button was pressed through watchOS
@@ -229,6 +232,8 @@ int thepin = -1;
             // if the button was pressed through the watchOS
         }
         if(_carArray.count == 0){
+            MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:myMapView.userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(myMapView.userLocation.coordinate.latitude, myMapView.userLocation.coordinate.longitude) eyeAltitude:1000];
+            [myMapView setCamera:camera animated:NO];
             [myMapView addAnnotation:_centerAnnotation];
             [_set setTitle:@"Set Pinpoint" forState:UIControlStateNormal];
             _addButton.enabled = NO;
@@ -264,11 +269,12 @@ int thepin = -1;
     MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:1000];
     [mapView setCamera:camera animated:NO];
     
-    if([_set.titleLabel.text isEqualToString: @"Set Pinpoint"]){
+    if([_set.titleLabel.text isEqualToString: @"Set Pinpoint"] && start){
         MKPointAnnotation *temp = [MKPointAnnotation new];
         temp.coordinate = myMapView.centerCoordinate;
         [myMapView addAnnotation:temp];
         _centerAnnotation = temp;
+        start = NO;
     }
     if([_set.titleLabel.text isEqualToString: @"Found"] && _city){
         if([_destination distanceFromLocation:userLocation.location] < 100){
