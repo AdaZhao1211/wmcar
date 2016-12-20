@@ -35,6 +35,8 @@
 		189ACFDA1DFF36FF0073C2ED /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189ACFD91DFF36FF0073C2ED /* ExtensionDelegate.m */; };
 		189ACFDC1DFF36FF0073C2ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189ACFDB1DFF36FF0073C2ED /* Assets.xcassets */; };
 		189ACFE01DFF36FF0073C2ED /* wmcarWK.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 189ACFC41DFF36FF0073C2ED /* wmcarWK.app */; };
+		18ECDC5D1E09ECAB007ED8C0 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18ECDC5C1E09ECAB007ED8C0 /* photo.png */; };
+		18ECDC5F1E09F845007ED8C0 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 18ECDC5E1E09F845007ED8C0 /* noimage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,8 @@
 		189ACFD91DFF36FF0073C2ED /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
 		189ACFDB1DFF36FF0073C2ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		189ACFDD1DFF36FF0073C2ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18ECDC5C1E09ECAB007ED8C0 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
+		18ECDC5E1E09F845007ED8C0 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +263,8 @@
 		180EB5211DE4D0D600DCD7AA /* Assests */ = {
 			isa = PBXGroup;
 			children = (
+				18ECDC5E1E09F845007ED8C0 /* noimage.png */,
+				18ECDC5C1E09ECAB007ED8C0 /* photo.png */,
 				182E6C151DFD12F00060DD3B /* launch.jpg */,
 				182E6C0F1DFD0D690060DD3B /* success.wav */,
 				1815C3081DEF678500CEF780 /* add.png */,
@@ -467,11 +473,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18ECDC5F1E09F845007ED8C0 /* noimage.png in Resources */,
 				180EB51D1DE38CD300DCD7AA /* settings.png in Resources */,
 				180EB4E31DE2132100DCD7AA /* LaunchScreen.storyboard in Resources */,
 				180EB4E01DE2132100DCD7AA /* Assets.xcassets in Resources */,
 				182E6C101DFD0D690060DD3B /* success.wav in Resources */,
 				182E6C161DFD12F00060DD3B /* launch.jpg in Resources */,
+				18ECDC5D1E09ECAB007ED8C0 /* photo.png in Resources */,
 				1815C3091DEF678500CEF780 /* add.png in Resources */,
 				180EB4DE1DE2132100DCD7AA /* Main.storyboard in Resources */,
 				180EB52A1DE9DA7600DCD7AA /* camera.png in Resources */,
@@ -866,6 +874,7 @@
 				189ACFE41DFF36FF0073C2ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		189ACFE71DFF36FF0073C2ED /* Build configuration list for PBXNativeTarget "wmcarWK" */ = {
 			isa = XCConfigurationList;
@@ -874,6 +883,7 @@
 				189ACFE21DFF36FF0073C2ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

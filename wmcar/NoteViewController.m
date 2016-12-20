@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    display.image = [UIImage imageNamed:@"noimage.png"];
     // Do any additional setup after loading the view.
 }
 
@@ -27,25 +28,22 @@
 }
 - (IBAction)cancelButton:(id)sender {
 }
-- (IBAction)addPhoto:(id)sender {
-    UIAlertController *actionSheet =[UIAlertController alertControllerWithTitle:nil
-                                                                        message:nil
-                                                                 preferredStyle:UIAlertControllerStyleActionSheet];
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Take a photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self dismissViewControllerAnimated:YES completion:^{
-        }];
-    }]];
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Choose from library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSLog(@"library");
-        [self dismissViewControllerAnimated:YES completion:^{
-        }];
-    }]];
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        [self dismissViewControllerAnimated:YES completion:^{
-        }];
-    }]];
-    [self presentViewController:actionSheet animated:YES completion:nil];
 
+- (IBAction)addPhoto:(id)sender {
+    pick = [UIImagePickerController new];
+    pick.delegate = self;
+    [pick setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:pick animated:YES completion:NULL];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [display setImage:image];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 
@@ -62,4 +60,11 @@
     }
 }
 
+- (IBAction)takePhoto:(id)sender {
+    picker = [UIImagePickerController new];
+    picker.delegate = self;
+    [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
 @end

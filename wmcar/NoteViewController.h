@@ -9,11 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "Model.h"
 
-@interface NoteViewController : UIViewController
+@interface NoteViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
+    UIImagePickerController *picker;
+    UIImagePickerController *pick;
+    UIImage *image;
+    IBOutlet UIImageView *display;
+}
+- (IBAction)takePhoto:(id)sender;
+- (IBAction)addPhoto:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *carField;
-
 @property (strong, nonatomic) Model *model;
 @property (weak, nonatomic) IBOutlet UITextField *floorField;
 @property (weak, nonatomic) IBOutlet UITextField *numField;
+
 
 @end
