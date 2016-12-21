@@ -14,6 +14,7 @@
 #import "Model.h"
 #import "NoteViewController.h"
 #import "SettingTableViewController.h"
+#import "DisplayViewController.h"
 
 @interface MapViewController : UIViewController 
 @property (nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
@@ -21,11 +22,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (nonatomic, assign) Boolean city;
 @property (nonatomic, assign) Boolean multi;
-@property (strong, nonatomic) Model *settingModel;
 @property (strong, nonatomic) Model *noteModel;
 @property (nonatomic, retain) MKPointAnnotation *centerAnnotation;
 @property (strong, nonatomic) NSMutableArray *carArray;
+@property (strong, nonatomic) NSMutableArray *modelArray;
 @property (strong, nonatomic) CLLocation *destination;
+
 //implement the destination when the user chooses a pin in city mode
 //release it when pressed FOUND
 

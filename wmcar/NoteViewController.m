@@ -57,6 +57,7 @@
         _model.thisCar = _carField.text;
         _model.thisNumber = _numField.text;
         _model.thisFloor = _floorField.text;
+        _model.thisImage = image;
     }
 }
 

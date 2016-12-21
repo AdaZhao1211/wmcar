@@ -13,6 +13,7 @@
 @interface MapViewController () <MKMapViewDelegate, WCSessionDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate> {
     CLLocationManager *locationmanager;
     bool start;
+    bool display;
     __weak IBOutlet MKMapView *myMapView;
     int carCount;
     double latitude; //coordinates passed from watchOS
@@ -41,6 +42,7 @@ int thepin = -1;
     start = YES;
     _city = YES;
     _multi = NO;
+    display = NO;
     
     //map
     locationmanager = [CLLocationManager new];
@@ -53,7 +55,6 @@ int thepin = -1;
     locationmanager.delegate = self;
     [locationmanager startUpdatingLocation];
     self.noteModel = [Model new];
-    self.settingModel = [Model new];
     
     //gesture
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
@@ -66,6 +67,8 @@ int thepin = -1;
     
     //car array
     _carArray = [NSMutableArray new];
+    _modelArray = [NSMutableArray new];
+
     _addButton.enabled = NO;
 }
 
@@ -115,6 +118,7 @@ int thepin = -1;
                 MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
                 MKPointAnnotation *temp = [_carArray objectAtIndex:0];
                 if(_city){
+                    display = YES;
                     _destination = [[CLLocation alloc] initWithLatitude:temp.coordinate.latitude longitude:temp.coordinate.longitude];
                 }
                 MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:temp.coordinate];
@@ -155,6 +159,7 @@ int thepin = -1;
                     MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
                     MKPointAnnotation *temp = [_carArray objectAtIndex:thepin];
                     if(_city){
+                        display = YES;
                         _destination = [[CLLocation alloc] initWithLatitude:temp.coordinate.latitude longitude:temp.coordinate.longitude];
                     }
                     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:temp.coordinate];
@@ -182,6 +187,7 @@ int thepin = -1;
             MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
             MKPointAnnotation *temp = [_carArray objectAtIndex:0];
             if(_city){
+                display = YES;
                 _destination = [[CLLocation alloc] initWithLatitude:temp.coordinate.latitude longitude:temp.coordinate.longitude];
             }
             [directionsRequest setTransportType:MKDirectionsTransportTypeWalking];
@@ -277,9 +283,10 @@ int thepin = -1;
         start = NO;
     }
     if([_set.titleLabel.text isEqualToString: @"Found"] && _city){
-        if([_destination distanceFromLocation:userLocation.location] < 100){
+        if([_destination distanceFromLocation:userLocation.location] < 100 && display){
             NSLog(@"distance less than 100m");
             //show the image if implemented
+            [self performSegueWithIdentifier:@"displayNote" sender:nil];
         }
     }
 }
@@ -304,11 +311,16 @@ int thepin = -1;
     if(_multi){
         _addButton.enabled = YES;
     }
+    Model *temp = _noteModel;
+    [_modelArray addObject: temp];
 }
 
 -(IBAction)cancelNote:(UIStoryboardSegue *) segue {
 }
 
+-(IBAction)backtomap:(UIStoryboardSegue *) segue {
+    display = NO;
+}
 //gesture
 - (void)handleGesture:(UIGestureRecognizer *)gestureRecognizer
 {
@@ -320,6 +332,12 @@ int thepin = -1;
     if([segue.identifier isEqualToString:@"showNote"]){
         NoteViewController *noteVC = segue.destinationViewController;
         noteVC.model = self.noteModel;
+    }
+    
+    if([segue.identifier isEqualToString:@"displayNote"]){
+        DisplayViewController *VC = segue.destinationViewController;
+        Model *newcar = [_modelArray objectAtIndex: thepin];
+        VC.car = newcar;
     }
 }
 

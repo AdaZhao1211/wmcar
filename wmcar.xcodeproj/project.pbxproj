@@ -37,6 +37,7 @@
 		189ACFE01DFF36FF0073C2ED /* wmcarWK.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 189ACFC41DFF36FF0073C2ED /* wmcarWK.app */; };
 		18ECDC5D1E09ECAB007ED8C0 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18ECDC5C1E09ECAB007ED8C0 /* photo.png */; };
 		18ECDC5F1E09F845007ED8C0 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 18ECDC5E1E09F845007ED8C0 /* noimage.png */; };
+		18ECDC651E0A1090007ED8C0 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECDC641E0A1090007ED8C0 /* DisplayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,8 @@
 		189ACFDD1DFF36FF0073C2ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18ECDC5C1E09ECAB007ED8C0 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
 		18ECDC5E1E09F845007ED8C0 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
+		18ECDC631E0A1090007ED8C0 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
+		18ECDC641E0A1090007ED8C0 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +297,8 @@
 				180EB51A1DE387E400DCD7AA /* SettingTableViewController.m */,
 				180EB5101DE22F1900DCD7AA /* MapViewController.h */,
 				180EB5111DE22F1900DCD7AA /* MapViewController.m */,
+				18ECDC631E0A1090007ED8C0 /* DisplayViewController.h */,
+				18ECDC641E0A1090007ED8C0 /* DisplayViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -531,6 +536,7 @@
 				1815C3061DECC99800CEF780 /* Model.m in Sources */,
 				180EB52D1DE9DD8F00DCD7AA /* NoteViewController.m in Sources */,
 				180EB5091DE216F100DCD7AA /* SWRevealViewController.m in Sources */,
+				18ECDC651E0A1090007ED8C0 /* DisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

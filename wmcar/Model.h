@@ -7,13 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 @interface Model : NSObject
 
-@property (nonatomic, assign) BOOL thisCity;
-@property (nonatomic, assign) BOOL thisMulti;
 @property (strong, nonatomic) NSString *thisCar;
 @property (strong, nonatomic) NSString *thisFloor;
 @property (strong, nonatomic) NSString *thisNumber;
+@property (strong, nonatomic) UIImage *thisImage;
 
 @end
